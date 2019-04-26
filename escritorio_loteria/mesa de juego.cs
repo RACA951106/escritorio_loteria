@@ -280,27 +280,40 @@ namespace escritorio_loteria
 
         internal static IPAddress obtenerIP()
         {
-            IPAddress ipAddress = null;
-            var guardar = false;
-            foreach (NetworkInterface ni in NetworkInterface.GetAllNetworkInterfaces())
+            //IPAddress ipAddress = null;
+            //var guardar = false;
+            //foreach (NetworkInterface ni in NetworkInterface.GetAllNetworkInterfaces())
+            //{
+            //    if (ni.NetworkInterfaceType == NetworkInterfaceType.Wireless80211 || ni.NetworkInterfaceType == NetworkInterfaceType.Ethernet)
+            //    {
+            //        foreach (UnicastIPAddressInformation ip in ni.GetIPProperties().UnicastAddresses)
+            //        {
+            //            if (ip.Address.AddressFamily == System.Net.Sockets.AddressFamily.InterNetwork)
+            //            {
+            //                if (!guardar)
+            //                {
+            //                    ipAddress = ip.Address;
+            //                    guardar = true;
+            //                    Console.WriteLine(ip.Address);
+            //                }
+            //            }
+            //        }
+            //    }
+            //}
+            //return ipAddress;
+
+            IPHostEntry host;
+            string localIP = "";
+            host = Dns.GetHostEntry(Dns.GetHostName());
+            foreach (IPAddress ip in host.AddressList)
             {
-                if (ni.NetworkInterfaceType == NetworkInterfaceType.Wireless80211 || ni.NetworkInterfaceType == NetworkInterfaceType.Ethernet)
+                if (ip.AddressFamily.ToString() == "InterNetwork")
                 {
-                    foreach (UnicastIPAddressInformation ip in ni.GetIPProperties().UnicastAddresses)
-                    {
-                        if (ip.Address.AddressFamily == System.Net.Sockets.AddressFamily.InterNetwork)
-                        {
-                            if (!guardar)
-                            {
-                                ipAddress = ip.Address;
-                                guardar = true;
-                                Console.WriteLine(ip.Address);
-                            }
-                        }
-                    }
+                    localIP = ip.ToString();
                 }
             }
-            return ipAddress;
+
+            return IPAddress.Parse(localIP);
         }
 
     }
