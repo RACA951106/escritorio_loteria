@@ -41,9 +41,10 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.txtNombUsu.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtNombUsu.Location = new System.Drawing.Point(215, 33);
+            this.txtNombUsu.Location = new System.Drawing.Point(161, 27);
+            this.txtNombUsu.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.txtNombUsu.Name = "txtNombUsu";
-            this.txtNombUsu.Size = new System.Drawing.Size(153, 27);
+            this.txtNombUsu.Size = new System.Drawing.Size(116, 23);
             this.txtNombUsu.TabIndex = 1;
             // 
             // btnCrearPtda
@@ -53,9 +54,10 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.btnCrearPtda.BackgroundImage = global::escritorio_loteria.Properties.Resources.Yellow_lakejpg_320x299;
             this.btnCrearPtda.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCrearPtda.Location = new System.Drawing.Point(15, 67);
+            this.btnCrearPtda.Location = new System.Drawing.Point(11, 54);
+            this.btnCrearPtda.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnCrearPtda.Name = "btnCrearPtda";
-            this.btnCrearPtda.Size = new System.Drawing.Size(356, 50);
+            this.btnCrearPtda.Size = new System.Drawing.Size(267, 41);
             this.btnCrearPtda.TabIndex = 2;
             this.btnCrearPtda.Text = "Crear Partida";
             this.btnCrearPtda.UseVisualStyleBackColor = true;
@@ -68,12 +70,14 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.btnUnirsePtda.BackgroundImage = global::escritorio_loteria.Properties.Resources.Yellow_lakejpg_320x299;
             this.btnUnirsePtda.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnUnirsePtda.Location = new System.Drawing.Point(16, 123);
+            this.btnUnirsePtda.Location = new System.Drawing.Point(12, 100);
+            this.btnUnirsePtda.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnUnirsePtda.Name = "btnUnirsePtda";
-            this.btnUnirsePtda.Size = new System.Drawing.Size(356, 50);
+            this.btnUnirsePtda.Size = new System.Drawing.Size(267, 41);
             this.btnUnirsePtda.TabIndex = 3;
             this.btnUnirsePtda.Text = "Unirse a la Partida";
             this.btnUnirsePtda.UseVisualStyleBackColor = true;
+            this.btnUnirsePtda.Click += new System.EventHandler(this.btnUnirsePtda_Click);
             // 
             // lblNombUsu
             // 
@@ -84,25 +88,27 @@
             this.lblNombUsu.BackColor = System.Drawing.Color.Transparent;
             this.lblNombUsu.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblNombUsu.ForeColor = System.Drawing.SystemColors.Control;
-            this.lblNombUsu.Location = new System.Drawing.Point(12, 33);
+            this.lblNombUsu.Location = new System.Drawing.Point(9, 27);
+            this.lblNombUsu.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblNombUsu.Name = "lblNombUsu";
-            this.lblNombUsu.Size = new System.Drawing.Size(176, 20);
+            this.lblNombUsu.Size = new System.Drawing.Size(152, 17);
             this.lblNombUsu.TabIndex = 4;
             this.lblNombUsu.Text = "Nombre del Usuario";
             // 
             // menu
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Green;
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(383, 501);
+            this.ClientSize = new System.Drawing.Size(287, 407);
             this.Controls.Add(this.lblNombUsu);
             this.Controls.Add(this.btnUnirsePtda);
             this.Controls.Add(this.btnCrearPtda);
             this.Controls.Add(this.txtNombUsu);
             this.DoubleBuffered = true;
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "menu";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Inicio";

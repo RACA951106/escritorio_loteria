@@ -21,14 +21,29 @@ namespace escritorio_loteria
 
         private void btnCrearPtda_Click(object sender, EventArgs e)
         {
-            if (txtNombUsu.Text.Equals(""))
+            if (String.IsNullOrEmpty(txtNombUsu.Text))
             {
                 MessageBox.Show("Dato Invalido","Al tiro Compa", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             else
             {
-                mesa_de_juego FrmMjuego = new mesa_de_juego();
+                mesa_de_juego FrmMjuego = new mesa_de_juego(txtNombUsu.Text, "no");
                 FrmMjuego.Show();
+                this.Hide();
+            }
+        }
+
+        private void btnUnirsePtda_Click(object sender, EventArgs e)
+        {
+            if (String.IsNullOrEmpty(txtNombUsu.Text))
+            {
+                MessageBox.Show("Dato Invalido", "Al tiro Compa", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            else
+            {
+                mesa_de_juego FrmMjuego = new mesa_de_juego(txtNombUsu.Text, "si");
+                FrmMjuego.Show();
+                this.Hide();
             }
         }
     }

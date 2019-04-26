@@ -1,9 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Drawing;
-using System.Linq;
 using System.Net;
 using System.Net.NetworkInformation;
 using System.Net.Sockets;
@@ -56,13 +53,12 @@ namespace escritorio_loteria
         #endregion;
 
 
-        public mesa_de_juego()
+        public mesa_de_juego(string jugadorPasado, string cliente)
         {
             InitializeComponent();
 
             //obtener el valor que envio el activity del menu
-            jugador = "";
-            var cliente = "";
+            jugador = jugadorPasado;
 
             carta1.Click += delegate { evaluar_carta(carta1); };
             carta2.Click += delegate { evaluar_carta(carta2); };
@@ -99,7 +95,7 @@ namespace escritorio_loteria
             {
                 btnJugar.Click += delegate
                 {
-                    conectar(txtJugadores.Text);
+                    conectar(txtIPServer.Text);
                 };
             }
             else

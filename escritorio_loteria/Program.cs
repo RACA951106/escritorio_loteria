@@ -16,7 +16,7 @@ namespace escritorio_loteria
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new mesa_de_juego());
+            Application.Run(new menu());
         }
     }
 }
